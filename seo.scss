@@ -69,6 +69,7 @@ body {
 }
 
 section {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,7 +116,8 @@ section {
     height: 640px;
     border-bottom: 8px solid $cBase;
     background: $cBgBlue;
-    background: $cBgBlue url('../asset/img/bg-hero.png') no-repeat cover;
+    background: $cBgBlue url('../asset/img/bg-hero.png') no-repeat center;
+    background-size: cover;
     box-shadow: 0 8px 16px $c20;
     header {
         display: flex;
@@ -251,9 +253,18 @@ section {
 
 // 커리큘럼
 .curriculum {
-    background: linear-gradient($cBase 0%, $cNavy 100%);
-    background: $cBase url('../asset/img/bg-curriculum.png') no-repeat cover;
+    background: $cBase url('../asset/img/bg-curriculum.png') no-repeat center;
+    background-size: cover;
     color: $cWhite;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient($cNavy 35%, rgba($cNavy, 0) 100%);
+    }
     img {
         margin-top: 40px;
         max-width: 1080px;
@@ -265,9 +276,18 @@ section {
 
 // 지역별 수강신청
 .area {
-    background: linear-gradient($cBase 0%, $cNavy 100%);
-    background: $cBase url('../asset/img/bg-area.png') no-repeat cover;
+    background: $cBase url('../asset/img/bg-area.png') no-repeat center;
+    background-size: cover;
     color: $cWhite;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient($cNavy 35%, rgba($cNavy, 0) 100%);
+    }
     .coach {
         display: flex;
         flex-direction: row;

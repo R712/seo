@@ -46,6 +46,7 @@ body h1 {
 }
 
 section {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +90,8 @@ section .img-single + .img-single {
   height: 640px;
   border-bottom: 8px solid #020F32;
   background: #D9F6FF;
-  background: #D9F6FF url("../asset/img/bg-hero.png") no-repeat cover;
+  background: #D9F6FF url("../asset/img/bg-hero.png") no-repeat center;
+  background-size: cover;
   box-shadow: 0 8px 16px rgba(2, 15, 50, 0.2);
 }
 .hero header {
@@ -221,9 +223,18 @@ section .img-single + .img-single {
 }
 
 .curriculum {
-  background: linear-gradient(#020F32 0%, #002B6C 100%);
-  background: #020F32 url("../asset/img/bg-curriculum.png") no-repeat cover;
+  background: #020F32 url("../asset/img/bg-curriculum.png") no-repeat center;
+  background-size: cover;
   color: #FFFFFF;
+}
+.curriculum::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#002B6C 35%, rgba(0, 43, 108, 0) 100%);
 }
 .curriculum img {
   margin-top: 40px;
@@ -234,9 +245,18 @@ section .img-single + .img-single {
 }
 
 .area {
-  background: linear-gradient(#020F32 0%, #002B6C 100%);
-  background: #020F32 url("../asset/img/bg-area.png") no-repeat cover;
+  background: #020F32 url("../asset/img/bg-area.png") no-repeat center;
+  background-size: cover;
   color: #FFFFFF;
+}
+.area::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#002B6C 35%, rgba(0, 43, 108, 0) 100%);
 }
 .area .coach {
   display: flex;
