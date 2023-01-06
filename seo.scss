@@ -1,0 +1,407 @@
+//
+//  변환 위치 /asset/seo.css
+//
+
+// 레이아웃 및 기본 세팅
+$maxW: 1080px;
+$minW: 480px;
+
+// 컬러팔레트 세팅
+$cBase: #020F32;
+$cNavy: #002B6C;
+$cBlue: #268DFF;
+$cWhite: #FFFFFF;
+$cBg: #F5F8FB;
+$cBgBlue: #D9F6FF;
+$cBorder: #EBF0F6;
+$c80: rgba($cBase, .8);
+$c60: rgba($cBase, .6);
+$c40: rgba($cBase, .4);
+$c20: rgba($cBase, .2);
+$scroll: var(--scroll);
+
+// 기본 및 브라우저별 스타일 리셋
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+html {
+    max-width: 100vw;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    max-width: 100vw;
+    background: $cBg;
+    font-family: 'Pretendard';
+    font-size: 18px;
+    line-height: 1.6;
+    a {
+        position: relative;
+        color: $cBlue;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    a, button {
+        cursor: pointer;
+    }
+    // 이미지 대체형 디자인이 많아서 숨김처리할 것들
+    h1 {
+        display: none;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: $cWhite;
+    color: $c80;
+    cursor: default;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    overflow: hidden;
+    &:not(:first-of-type) {
+        .container {
+            padding: 100px 0;
+        }
+    }
+    svg:first-child {
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+    }
+    button:last-child {
+        margin-top: 40px;
+        background: none;
+    }
+    .img-single {
+        display: block;
+        margin: 48px auto 0;
+        & + .img-single {
+            margin-top: 24px;
+        }
+    }
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $maxW;
+    height: 100%;
+}
+
+// 히어로
+.hero {
+    height: 640px;
+    border-bottom: 8px solid $cBase;
+    background: $cBgBlue;
+    background: $cBgBlue url('../asset/img/bg-hero.png') no-repeat cover;
+    box-shadow: 0 8px 16px $c20;
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo {
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        top: 110px;
+        margin-left: -168px;
+        width: 336px;
+    }
+    img[class^='decomsg'] {
+        position: absolute;
+        &.decomsg00 {
+            left: 50%;
+            top: 200px;
+            margin-left: -400px;
+            width: 223px;
+        }
+        &.decomsg01 {
+            right: 50%;
+            top: 200px;
+            margin-right: -400px;
+            width: 223px;
+        }
+        &.decomsg02 {
+            right: 50%;
+            top: 60px;
+            margin-right: -286px;
+            width: 151px;
+        }
+    }
+    .with {
+        position: absolute;
+        left: 50%;
+        top: -6px;
+        margin-left: -217px;
+        width: 434px;
+        height: 68px;
+    }
+    .decothem {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin-left: -596px;
+        // 최대해상도 width: 2382px; height: 968px;
+        width: 1191px;
+        height: 484px;
+    }
+    .lineup {
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        bottom: -60px;
+        margin-left: -543px;
+        // 최대해상도 width: 2172px; height: 304px;
+        width: 1086px;
+        height: 152px;
+    }
+}
+
+// 스토리
+.story {
+    border-bottom: 1px solid $cBorder;
+    .container {
+        max-width: $maxW;
+    }
+    .question {
+        padding: 6px 12px;
+        background: $cBg;
+        font-size: 24px;
+        font-weight: 800;
+        border-radius: 4px;
+        &::before {
+            content: '🎙';
+            margin-right: 8px;
+            font-weight: 400;
+            font-size: 24px;
+        }
+    }
+    img {
+        margin-top: 40px;
+        max-width: 980px;
+        &:first-child {
+            margin: 0;
+        }
+    }
+    p {
+        margin-top: 40px;
+        &:last-of-type {
+            font-size: 24px;
+            strong {
+                color: $c80;
+            }
+        }
+    }
+    strong {
+        color: $cNavy;
+        font-weight: 800;
+    }
+    ol {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 40px 0;
+        padding: 24px 24px 24px 56px;
+        max-width: 720px;
+        background: $cBg;
+        font-weight: 500;
+        font-size: 20px;
+        border-radius: 24px;
+        list-style: none;
+        counter-reset: list-number;
+        li {
+            counter-increment: list-number;
+            position: relative;
+            &::before {
+                content: counter(list-number) '.';
+                position: absolute;
+                left: -24px;
+                top: 0;
+                color: $c40;
+                font-weight: 700;
+            }
+            & + li {
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+// 커리큘럼
+.curriculum {
+    background: linear-gradient($cBase 0%, $cNavy 100%);
+    background: $cBase url('../asset/img/bg-curriculum.png') no-repeat cover;
+    color: $cWhite;
+    img {
+        margin-top: 40px;
+        max-width: 1080px;
+        & + img {
+            margin-top: 24px;
+        }
+    }
+}
+
+// 지역별 수강신청
+.area {
+    background: linear-gradient($cBase 0%, $cNavy 100%);
+    background: $cBase url('../asset/img/bg-area.png') no-repeat cover;
+    color: $cWhite;
+    .coach {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 48px;
+        :nth-child(1),
+        :nth-child(6) {
+            margin-left: 160px;
+        }
+        :nth-child(2),
+        :nth-child(7) {
+            margin-right: 160px;
+        }
+    }
+}
+
+// 후기
+.weare {
+    border-bottom: 1px solid $cBorder;
+}
+
+// 서과장 효과
+.seoeffect {
+    border-bottom: 1px solid $cBorder;
+    background: $cBg;
+}
+
+// 커뮤니티 및 파트너
+.community {
+    .banners {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        margin-top: 24px;
+        &:first-of-type {
+            margin-top: 48px;
+        }
+    }
+}
+
+// 푸터
+footer {
+    border-top: 1px solid $cBorder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0 100px;
+    width: 100vw;
+    font-size: 15px;
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: $maxW;
+        overflow: hidden;
+    }
+    .info {
+        svg {
+            margin-bottom: 20px;
+        }
+        nav {
+            margin-top: 24px;
+        }
+        a {
+            color: $c80;
+            &:hover {
+                text-decoration: underline;
+            }
+            & + a::before {
+                content: '|';
+                padding: 0 12px;
+                color: $c40;
+                font-weight: 200;
+            }
+        }
+        strong {
+            & + strong::before {
+                content: '|';
+                padding: 0 12px;
+                color: $c40;
+                font-weight: 200;
+            }
+        }
+    }
+    .sns {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        button {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            padding: 8px 12px;
+            background: $cBg;
+            color: $c60;
+            font-weight: 500;
+            font-family: 'Pretendard';
+            font-size: 16px;
+            border-radius: 4px;
+        }
+    }
+}
+
+// 페이지 프로그레스바
+.progress {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 8px;
+    &::after {
+        content: '';
+        display: flex;
+        width: 0%;
+        height: 8px;
+        background: linear-gradient(90deg, $cNavy 0%, $cBlue 100%);
+        backdrop-filter: 8px;
+        animation: progress 1s linear;
+        animation-play-state: paused;
+        animation-delay: calc($scroll * -1s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+    }
+}
+@keyframes progress {
+    to {
+        width: 100%;
+    }
+}
