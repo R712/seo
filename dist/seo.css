@@ -9,11 +9,6 @@
   width: 0;
 }
 
-::-moz-selection {
-  background-color: #D9F6FF;
-  color: #020F32;
-}
-
 ::selection {
   background-color: #D9F6FF;
   color: #020F32;
@@ -310,8 +305,7 @@ section .img-single + .img-single {
   align-items: center;
   padding: 12px;
   background: rgba(245, 248, 251, 0.2);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   box-shadow: 0 0 40px rgba(2, 15, 50, 0.2);
   border-radius: 6px;
 }
@@ -360,8 +354,7 @@ section .img-single + .img-single {
   max-width: 980px;
   background: rgba(255, 255, 255, 0.8);
   color: rgba(2, 15, 50, 0.8);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   box-shadow: 0 0 40px rgba(2, 15, 50, 0.2);
   border-radius: 12px;
 }
@@ -560,8 +553,7 @@ section .img-single + .img-single {
   justify-content: space-around;
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-radius: 16px 16px 0 0;
   box-shadow: 0 -1px rgba(2, 15, 50, 0.1), 0 -4px 24px rgba(2, 15, 50, 0.12);
   overflow: hidden;
@@ -571,7 +563,7 @@ section .img-single + .img-single {
   align-items: center;
   justify-content: center;
   padding: 2px 0 0;
-  width: 16.6666666667%;
+  width: calc(100% / 6);
   color: #020F32;
   font-weight: 700;
   font-size: 15px;
@@ -655,22 +647,11 @@ footer .sns button {
   width: 0%;
   height: 4px;
   background: linear-gradient(90deg, #002B6C 0%, #268DFF 100%);
-  -webkit-animation: progress 1s linear;
-          animation: progress 1s linear;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-  -webkit-animation-delay: calc(var(--scroll) * -1s);
-          animation-delay: calc(var(--scroll) * -1s);
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-}
-
-@-webkit-keyframes progress {
-  to {
-    width: 100%;
-  }
+  animation: progress 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc($scroll * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 
 @keyframes progress {
