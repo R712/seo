@@ -257,7 +257,7 @@ section .img-single + .img-single {
   flex-direction: column;
   box-sizing: border-box;
   margin: 40px 40px 0;
-  padding: 24px 24px 24px 32px;
+  padding: 24px 0 24px 32px;
   max-width: 680px;
   font-weight: 500;
   font-size: 20px;
@@ -755,6 +755,7 @@ button[class^=btn-].btn-reviewoncafe {
   }
   .story p {
     margin-top: 4vw;
+    padding: 0 2vw;
   }
   .story p:last-of-type {
     padding: 0 8vw;
