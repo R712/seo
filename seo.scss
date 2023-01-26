@@ -3,7 +3,7 @@
 //
 
 // 레이아웃 및 기본 세팅
-$maxW: 1080px;
+$maxW: 980px;
 $minW: 480px;
 
 // 컬러팔레트 세팅
@@ -49,6 +49,7 @@ body {
     font-family: 'Pretendard';
     font-size: 18px;
     line-height: 1.6;
+    font-smooth: antialiased;
     a {
         position: relative;
         color: $cBlue;
@@ -87,7 +88,7 @@ section {
     overflow: hidden;
     &:not(:first-of-type) {
         .container {
-            padding: 100px 0;
+            padding: 100px 40px;
         }
     }
     svg:first-child {
@@ -264,7 +265,10 @@ section {
         }
     }
     p {
+        box-sizing: border-box;
         margin-top: 40px;
+        padding: 0 40px;
+        max-width: 880px;
         &:last-of-type {
             font-size: 24px;
             strong {
@@ -279,25 +283,26 @@ section {
     ol {
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
         margin: 40px 40px 0;
-        padding: 24px 24px 24px 56px;
-        max-width: 720px;
-        background: $cBg;
+        padding: 24px 24px 24px 32px;
+        max-width: 680px;
         font-weight: 500;
         font-size: 20px;
-        border-radius: 24px;
         list-style: none;
         counter-reset: list-number;
         li {
             counter-increment: list-number;
             position: relative;
+            word-break: keep-all;
             &::before {
-                content: counter(list-number) '.';
+                content: '0' counter(list-number);
                 position: absolute;
-                left: -24px;
+                left: -32px;
                 top: 0;
-                color: $c40;
+                color: rgba($cNavy, .4);
                 font-weight: 700;
+                font-size: 20px;
             }
             & + li {
                 margin-top: 8px;
@@ -798,7 +803,7 @@ button[class^='btn-'] {
     .story {
         .container {
             box-sizing: border-box;
-            padding: 6vw 4vw 0 !important;
+            padding: 6vw 6vw 0 !important;
             overflow: hidden;
         }
         p {
@@ -809,7 +814,7 @@ button[class^='btn-'] {
             }
         }
         img {
-            max-width: 94vw;
+            max-width: 90vw;
         }
         .question {
             position: relative;
