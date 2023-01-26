@@ -712,16 +712,22 @@ button[class^='btn-'] {
     width: 80%;
     max-width: 980px;
     height: 60px;
-    background: transparent url('../asset/img/btn-kakao.png') no-repeat center;
-    background-size: 980px;
+    background: $cBgBlue no-repeat center;
     text-indent: -9999px;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 8px;
+    transition: ease-in .2s all;
+    box-shadow: inset 0 -4px 6px darken($cBg, 10%), inset 0 -1px darken($cBg, 25%), 0 4px 12px rgba($cBase, .04);
+    &:hover {
+        background-color: lighten($cBgBlue, 4%);
+    }
     &.btn-kakaoch {
-        background-image: url('../asset/img/btn-kakao.png');
+        background-image: url('../asset/img/btn-kakaoch.png');
+        background-size: 244px;
     }
     &.btn-reviewoncafe {
-        background-image: url('../asset/img/btn-cafereview.png');
+        background-image: url('../asset/img/btn-reviewoncafe.png');
+        background-size: 314px;
     }
 }
 
@@ -763,7 +769,6 @@ button[class^='btn-'] {
     }
     .hero {
         height: 100vh;
-        min-height: 720px;
         border-bottom: 0 !important;
         .logo,
         .decomsg00,
@@ -785,15 +790,15 @@ button[class^='btn-'] {
             width: 120px !important;
         }
         .decothem {
-            margin-left: -320px;
-            width: 640px;
+            margin-left: -55.4vw;
+            width: 108vw;
             height: auto;
         }
     }
     .story {
         .container {
             box-sizing: border-box;
-            padding: 6vw 4vw !important;
+            padding: 6vw 4vw 0 !important;
             overflow: hidden;
         }
         p {
@@ -839,20 +844,30 @@ button[class^='btn-'] {
     .course {
         background-image: none;
         svg {
-            width: 300px;
+            width: 270px;
         }
         .table {
             grid-template-columns: repeat(2, 1fr);
             gap: 2vw;
             margin: 2vw;
             a {
-                font-size: 16px;
+                height: 40px;
+                background: none;
+                font-size: 15px;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
+                & + a {
+                    margin-top: 0;
+                    border-top: 1px solid $cBorder;
+                }
             }
         }
         article {
+            h2 {
+                font-size: 20px;
+                white-space: nowrap;
+            }
             h2 + p {
                 font-size: 17px;
             }
@@ -875,7 +890,7 @@ button[class^='btn-'] {
         }
         svg {
             margin: 4vw 0;
-            width: 280px;
+            width: 240px;
         }
         p {
             display: none;
@@ -918,6 +933,9 @@ button[class^='btn-'] {
         }
     }
     button[class^='btn-'] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100vw;
         border-radius: 0;
     }

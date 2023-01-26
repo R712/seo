@@ -664,17 +664,23 @@ button[class^=btn-] {
   width: 80%;
   max-width: 980px;
   height: 60px;
-  background: transparent url("../asset/img/btn-kakao.png") no-repeat center;
-  background-size: 980px;
+  background: #D9F6FF no-repeat center;
   text-indent: -9999px;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 8px;
+  transition: ease-in 0.2s all;
+  box-shadow: inset 0 -4px 6px #d1dfec, inset 0 -1px #9ab8d7, 0 4px 12px rgba(2, 15, 50, 0.04);
+}
+button[class^=btn-]:hover {
+  background-color: #edfbff;
 }
 button[class^=btn-].btn-kakaoch {
-  background-image: url("../asset/img/btn-kakao.png");
+  background-image: url("../asset/img/btn-kakaoch.png");
+  background-size: 244px;
 }
 button[class^=btn-].btn-reviewoncafe {
-  background-image: url("../asset/img/btn-cafereview.png");
+  background-image: url("../asset/img/btn-reviewoncafe.png");
+  background-size: 314px;
 }
 
 @media (max-width: 912px) {
@@ -710,7 +716,6 @@ button[class^=btn-].btn-reviewoncafe {
 
   .hero {
     height: 100vh;
-    min-height: 720px;
     border-bottom: 0 !important;
   }
   .hero .logo,
@@ -733,14 +738,14 @@ button[class^=btn-].btn-reviewoncafe {
     width: 120px !important;
   }
   .hero .decothem {
-    margin-left: -320px;
-    width: 640px;
+    margin-left: -55.4vw;
+    width: 108vw;
     height: auto;
   }
 
   .story .container {
     box-sizing: border-box;
-    padding: 6vw 4vw !important;
+    padding: 6vw 4vw 0 !important;
     overflow: hidden;
   }
   .story p {
@@ -787,7 +792,7 @@ button[class^=btn-].btn-reviewoncafe {
     background-image: none;
   }
   .course svg {
-    width: 300px;
+    width: 270px;
   }
   .course .table {
     grid-template-columns: repeat(2, 1fr);
@@ -795,10 +800,20 @@ button[class^=btn-].btn-reviewoncafe {
     margin: 2vw;
   }
   .course .table a {
-    font-size: 16px;
+    height: 40px;
+    background: none;
+    font-size: 15px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+  .course .table a + a {
+    margin-top: 0;
+    border-top: 1px solid #EBF0F6;
+  }
+  .course article h2 {
+    font-size: 20px;
+    white-space: nowrap;
   }
   .course article h2 + p {
     font-size: 17px;
@@ -820,7 +835,7 @@ button[class^=btn-].btn-reviewoncafe {
   }
   .area svg {
     margin: 4vw 0;
-    width: 280px;
+    width: 240px;
   }
   .area p {
     display: none;
@@ -866,6 +881,9 @@ button[class^=btn-].btn-reviewoncafe {
   }
 
   button[class^=btn-] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     border-radius: 0;
   }
