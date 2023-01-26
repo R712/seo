@@ -769,9 +769,6 @@ button[class^=btn-].btn-reviewoncafe {
     padding: 0 8vw;
     font-size: 20px;
   }
-  .story p br {
-    display: none;
-  }
   .story img {
     max-width: 94vw;
   }
