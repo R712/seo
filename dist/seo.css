@@ -500,10 +500,10 @@ section .img-single + .img-single {
   display: flex;
 }
 .area .coach a:nth-child(1), .area .coach a:nth-child(6) {
-  margin-left: 160px;
+  margin-left: 120px;
 }
 .area .coach a:nth-child(2), .area .coach a:nth-child(7) {
-  margin-right: 160px;
+  margin-right: 120px;
 }
 .area .coach a:hover {
   transform: scale(1.04);

@@ -529,11 +529,11 @@ section {
             display: flex;
             &:nth-child(1),
             &:nth-child(6) {
-                margin-left: 160px;
+                margin-left: 120px;
             }
             &:nth-child(2),
             &:nth-child(7) {
-                margin-right: 160px;
+                margin-right: 120px;
             }
             &:hover {
                 transform: scale(1.04);
