@@ -503,14 +503,15 @@ section .img-single + .img-single {
   justify-content: center;
   margin-top: 48px;
 }
+.area .coach .row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
 .area .coach a {
   display: flex;
-}
-.area .coach a:nth-child(1), .area .coach a:nth-child(6) {
-  margin-left: 160px;
-}
-.area .coach a:nth-child(2), .area .coach a:nth-child(7) {
-  margin-right: 160px;
 }
 .area .coach a:hover {
   transform: scale(1.04);
@@ -857,7 +858,12 @@ button[class^=btn-].btn-reviewoncafe {
   }
   .area .coach {
     flex-direction: row;
+    gap: 16px;
     margin-top: 2vw;
+  }
+  .area .coach .row {
+    flex-wrap: wrap;
+    gap: 16px;
   }
   .area .coach a {
     margin: 0 !important;
